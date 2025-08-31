@@ -36,4 +36,5 @@ jobs:
       - name: 'Run tests'
         run: |
           pip install pytest
+          pip install python-multipart
           pytest
