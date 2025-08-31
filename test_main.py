@@ -3,10 +3,13 @@ from main import app
 
 
 client = TestClient(app)
-def test_post_cv_file_success():
-    with open("./data/Mykyta_Medvediev_CV_SF.pdf", "rb") as cv_file, \
-        open("./data/salesforce_developer.pdf", "rb") as job_file:
 
+
+def test_post_cv_file_success():
+    with (
+        open("./data/Mykyta_Medvediev_CV_SF.pdf", "rb") as cv_file,
+        open("./data/salesforce_developer.pdf", "rb") as job_file
+    ):
         response = client.post(
             "/match",
             files={

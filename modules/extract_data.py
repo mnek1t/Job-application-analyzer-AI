@@ -11,9 +11,10 @@ def extract_data_from_pdf(pdf_path: Union[str, BinaryIO]) -> str:
     reader = PdfReader(pdf_path, True)
     text = ""
     for page in reader.pages:
+        # encode and decode to remove non-ascii characters like /xe2 etc.
         extracted_text = str(
             page.extract_text()
-                .encode('ascii', 'ignore')  # encode and decode to remove non-ascii characters like /xe2 etc.
+                .encode('ascii', 'ignore')
                 .decode()
         )
         # extracted_text = remove_special_characters(extracted_text)
