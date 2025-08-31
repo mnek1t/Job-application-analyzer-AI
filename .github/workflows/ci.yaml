@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths:
       - '**.py'
+  pull_request:
+    branches: [main]
+    paths:
+      - '**.py'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,4 +36,5 @@ jobs:
       - name: 'Run tests'
         run: |
           pip install pytest
+          pip install python-multipart
           pytest
