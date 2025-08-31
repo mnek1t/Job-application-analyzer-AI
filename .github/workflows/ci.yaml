@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths:
       - '**.py'
+  pull_request:
+    branches: [main]
+    paths:
+      - '**.py'
 jobs:
   build:
     runs-on: ubuntu-latest
