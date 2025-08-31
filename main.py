@@ -41,7 +41,7 @@ def match_cv_to_job(cv: UploadFile, job: UploadFile):
         # Calculate overall similarity score by mean
         score = similarity_matrix.mean().item() * 100
         print(
-            f"Overall similarity score between CV and Job description is: {score}"
+            f"Overall similarity score is: {score}"
         )
         return {
             "similarity_score": score
